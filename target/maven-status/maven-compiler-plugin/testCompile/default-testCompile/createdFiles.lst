@@ -1,0 +1,6 @@
+org\xframework\BaseTest.class
+org\xframework\ioc\BeanHelperTest.class
+org\xframework\ioc\IocHelperTest.class
+org\xframework\core\ConfigHelperTest.class
+org\xframework\util\ClassUtilTest$1.class
+org\xframework\util\ClassUtilTest.class
