@@ -18,4 +18,8 @@ public class BeanTest {
     @Inject
     private UserBean userBean;
 
+    public void say() {
+        System.out.println("32");
+    }
+
 }
