@@ -25,7 +25,7 @@ public interface ClassScanner {
     List<Class<?>> getClassListByAnnotation(String packageName, Class<? extends Annotation> annotationClass);
 
     /**
-     * 获取指定包名中指定父类或接口的相关类
+     * 获取指定包名中指定父类或接口的所有子类(或实现类)
      */
     List<Class<?>> getClassListBySuper(String packageName, Class<?> superClass);
 
