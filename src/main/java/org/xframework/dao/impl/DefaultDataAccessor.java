@@ -5,16 +5,22 @@
 package org.xframework.dao.impl;
 
 import java.io.Serializable;
+import java.sql.SQLException;
 import java.util.List;
 import java.util.Map;
 
 import javax.sql.DataSource;
 
+import org.apache.commons.collections4.MapUtils;
+import org.apache.commons.dbutils.BasicRowProcessor;
+import org.apache.commons.dbutils.BeanProcessor;
 import org.apache.commons.dbutils.QueryRunner;
+import org.apache.commons.dbutils.handlers.BeanHandler;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.xframework.dao.DataAccessor;
 import org.xframework.dao.DatabaseHelper;
+import org.xframework.orm.EntityHelper;
 import org.xframework.util.LogUtil;
 
 /**
@@ -35,7 +41,19 @@ public class DefaultDataAccessor implements DataAccessor {
 
     @Override
     public <T> T queryEntiry(Class<T> entityClass, String sql, Object... params) {
-        return null;
+        T result;
+        try {
+            Map<String, String> columnMap = EntityHelper.getColumnMap(entityClass);
+            if (MapUtils.isNotEmpty(columnMap)) {
+                result = queryRunner.query(sql, new BeanHandler<T>(entityClass, new BasicRowProcessor(new BeanProcessor(columnMap))), params);
+            } else {
+                result = queryRunner.query(sql, new BeanHandler<T>(entityClass), params);
+            }
+        } catch (SQLException e) {
+            throw new RuntimeException("查询出错", e);
+        }
+        printSQL(sql);
+        return result;
     }
 
     @Override
