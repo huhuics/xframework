@@ -11,6 +11,8 @@ import org.apache.commons.lang3.StringUtils;
 import org.xframework.core.ClassScanner;
 import org.xframework.core.ConfigHelper;
 import org.xframework.core.impl.DefaultClassScanner;
+import org.xframework.ds.DataSourceFactory;
+import org.xframework.ds.impl.DefaultDataSourceFactory;
 import org.xframework.mvc.HandlerExceptionResolver;
 import org.xframework.mvc.HandlerInvoker;
 import org.xframework.mvc.HandlerMapping;
@@ -56,6 +58,13 @@ public class InstanceFactory {
      */
     public static ClassScanner getClassScanner() {
         return getInstance(CLASS_SCANNER, DefaultClassScanner.class);
+    }
+
+    /**
+     * 获取DataSourceFactory
+     */
+    public static DataSourceFactory getDataSourceFactory() {
+        return getInstance(DS_FACTORY, DefaultDataSourceFactory.class);
     }
 
     /**
