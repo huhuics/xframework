@@ -6,6 +6,8 @@ package org.xframework.dao;
 
 import java.sql.Connection;
 
+import javax.sql.DataSource;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.xframework.InstanceFactory;
@@ -30,4 +32,10 @@ public class DatabaseHelper {
      */
     private static final DataSourceFactory       dataSourceFactory = InstanceFactory.getDataSourceFactory();
 
+    /**
+     * 获取数据源
+     */
+    public static DataSource getDataSource() {
+        return dataSourceFactory.getDataSource();
+    }
 }
