@@ -18,12 +18,12 @@ public interface DataAccessor {
     /**
      * 查询对应的实体,返回单条记录
      */
-    <T> T queryEntiry(Class<T> entityClass, String sql, Object... params);
+    <T> T queryEntity(Class<T> entityClass, String sql, Object... params);
 
     /**
      * 查询对应实体表,返回多条记录
      */
-    <T> List<T> queryEntityList(Class<T> entiryClass, String sql, Object... params);
+    <T> List<T> queryEntityList(Class<T> entityClass, String sql, Object... params);
 
     /**
      * 查询对应的实体表,返回单条记录 (主键 => 实体)

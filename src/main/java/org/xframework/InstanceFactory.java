@@ -11,6 +11,8 @@ import org.apache.commons.lang3.StringUtils;
 import org.xframework.core.ClassScanner;
 import org.xframework.core.ConfigHelper;
 import org.xframework.core.impl.DefaultClassScanner;
+import org.xframework.dao.DataAccessor;
+import org.xframework.dao.impl.DefaultDataAccessor;
 import org.xframework.ds.DataSourceFactory;
 import org.xframework.ds.impl.DefaultDataSourceFactory;
 import org.xframework.mvc.HandlerExceptionResolver;
@@ -41,6 +43,9 @@ public class InstanceFactory {
     /** DataSourceFactory */
     private static final String              DS_FACTORY                 = "xframe.ds_factory";
 
+    /** DataAccessor */
+    private static final String              DATA_ACCESSOR              = "xframe.data_accessor";
+
     /** HandlerMapping */
     private static final String              HANDLER_MAPPING            = "xframe.handler_mapping";
 
@@ -65,6 +70,13 @@ public class InstanceFactory {
      */
     public static DataSourceFactory getDataSourceFactory() {
         return getInstance(DS_FACTORY, DefaultDataSourceFactory.class);
+    }
+
+    /**
+     * 获取DataAccessor
+     */
+    public static DataAccessor getDataAccessor() {
+        return getInstance(DATA_ACCESSOR, DefaultDataAccessor.class);
     }
 
     /**
