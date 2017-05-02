@@ -67,9 +67,25 @@ public class DatabaseHelper {
     }
 
     /**
-     * 提交事务
+     * 开启事务
      */
     public static void beginTransaction() {
+        Connection conn = getConnection();
+        if (conn != null) {
+            try {
+                conn.setAutoCommit(false);
+            } catch (SQLException e) {
+                throw new RuntimeException("开启事务出错", e);
+            } finally {
+                connContainer.set(conn);
+            }
+        }
+    }
+
+    /**
+     * 提交事务
+     */
+    public static void commitTransaction() {
         Connection conn = getConnection();
         if (conn != null) {
             try {

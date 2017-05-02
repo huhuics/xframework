@@ -233,7 +233,7 @@ public class DefaultDataAccessor implements DataAccessor {
     }
 
     private static void printSQL(String sql) {
-        LogUtil.debug(logger, "[xframework] SQL - {0}", sql);
+        LogUtil.info(logger, "[xframework] SQL - {0}", sql);
     }
 
 }
