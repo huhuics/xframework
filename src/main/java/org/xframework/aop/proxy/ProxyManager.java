@@ -18,12 +18,18 @@ import net.sf.cglib.proxy.MethodProxy;
  */
 public class ProxyManager {
 
+    /**
+     * 创建代理类
+     * @param targetClass  目标类
+     * @param proxyList    对目标类的增强类集合
+     * @return
+     */
     @SuppressWarnings("unchecked")
     public static <T> T createProxy(final Class<?> targetClass, final List<Proxy> proxyList) {
         return (T) Enhancer.create(targetClass, new MethodInterceptor() {
             @Override
             public Object intercept(Object targetObject, Method targetMethod, Object[] methodParams, MethodProxy methodProxy) throws Throwable {
-                return new ProxyChain(targetClass, targetObject, targetMethod, methodProxy, methodParams, proxyList);
+                return new ProxyChain(targetClass, targetObject, targetMethod, methodProxy, methodParams, proxyList).doProxyChain();
             }
         });
     }
