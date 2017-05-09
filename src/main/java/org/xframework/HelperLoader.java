@@ -4,6 +4,7 @@
  */
 package org.xframework;
 
+import org.xframework.aop.AopHelper;
 import org.xframework.ioc.BeanHelper;
 import org.xframework.ioc.IocHelper;
 import org.xframework.mvc.ActionHelper;
@@ -20,6 +21,7 @@ public class HelperLoader {
         Class<?>[] classList = { //定义需要加载的Helper类
         ActionHelper.class, //
                 BeanHelper.class, //
+                AopHelper.class,//
                 IocHelper.class // 
         };
 

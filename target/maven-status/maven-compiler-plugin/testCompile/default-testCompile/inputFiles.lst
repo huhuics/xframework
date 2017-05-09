@@ -1,6 +1,11 @@
 F:\WorkSpace\eclipse-luna\xframework\src\test\java\org\xframework\core\ConfigHelperTest.java
 F:\WorkSpace\eclipse-luna\xframework\src\test\java\org\xframework\ioc\BeanHelperTest.java
+F:\WorkSpace\eclipse-luna\xframework\src\test\java\org\xframework\aop\BeforeProxy.java
+F:\WorkSpace\eclipse-luna\xframework\src\test\java\org\xframework\aop\Client.java
 F:\WorkSpace\eclipse-luna\xframework\src\test\java\org\xframework\BaseTest.java
+F:\WorkSpace\eclipse-luna\xframework\src\test\java\org\xframework\aop\Greeting.java
 F:\WorkSpace\eclipse-luna\xframework\src\test\java\org\xframework\util\ClassUtilTest.java
+F:\WorkSpace\eclipse-luna\xframework\src\test\java\org\xframework\aop\AfterProxy.java
 F:\WorkSpace\eclipse-luna\xframework\src\test\java\org\xframework\mvc\RegexTest.java
+F:\WorkSpace\eclipse-luna\xframework\src\test\java\org\xframework\util\HashCodeTest.java
 F:\WorkSpace\eclipse-luna\xframework\src\test\java\org\xframework\ioc\IocHelperTest.java
