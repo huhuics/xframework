@@ -38,9 +38,9 @@ public class AopHelper {
 
     static {
         try {
-            //创建Proxy Map (用于存放代理类与目标类列表的映射关系)
+            //创建Proxy Map (用于存放代理类与目标类列表的映射关系,例如class org.debug.aspect.ActionAspect=[class org.debug.action.AccountAction, class org.debug.action.UserAction])
             Map<Class<?>, List<Class<?>>> proxyMap = createProxyMap();
-            //创建Target Map (用于存放目标类与代理类列表的映射关系)
+            //创建Target Map (用于存放目标类与代理类列表的映射关系,例如class org.debug.action.AccountAction=[org.debug.aspect.ActionAspect@71a40dde], class org.debug.action.UserAction=[org.debug.aspect.ActionAspect@33bfe151])
             Map<Class<?>, List<Proxy>> targetMap = createTargetMap(proxyMap);
             //遍历Target Map
             for (Map.Entry<Class<?>, List<Proxy>> targetEntry : targetMap.entrySet()) {
