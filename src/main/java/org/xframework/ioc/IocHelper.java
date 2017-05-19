@@ -46,7 +46,7 @@ public class IocHelper {
                                 Object implementInstance = beanMap.get(implementClass);
                                 // 设置该Bean字段的值
                                 if (implementInstance != null) {
-                                    beanField.setAccessible(true); // 将字段设置为public
+                                    beanField.setAccessible(true);
                                     beanField.set(beanInstance, implementInstance); // 设置字段初始值
                                 } else {
                                     throw new RuntimeException("依赖注入失败! 类名:" + beanClass.getSimpleName() + ", 字段名:" + interfaceClass.getSimpleName());
@@ -61,7 +61,7 @@ public class IocHelper {
         }
     }
 
-    public static Class<?> findImplementClass(Class<?> interfaceClass) {
+    private static Class<?> findImplementClass(Class<?> interfaceClass) {
         Class<?> implementClass = interfaceClass;
         // 判断接口上是否标注了Impl注解
         if (interfaceClass.isAnnotationPresent(Impl.class)) {

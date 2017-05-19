@@ -22,7 +22,7 @@ public final class ObjectUtil {
             Class<?> commandClass = ClassUtil.loadClass(className);
             instance = (T) commandClass.newInstance();
         } catch (Exception e) {
-            throw new RuntimeException("创建了类实例出错", e);
+            throw new RuntimeException("创建类实例出错", e);
         }
         return instance;
     }

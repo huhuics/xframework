@@ -61,7 +61,7 @@ public class ActionHelper {
             String requestPath = actionMethod.getAnnotation(Request.Post.class).value();
             putActionMap("POST", requestPath, actionClass, actionMethod, commonActionMap, regexpActionMap);
         } else if (actionMethod.isAnnotationPresent(Request.Put.class)) {
-            String requestPath = actionMethod.getAnnotation(Request.Post.class).value();
+            String requestPath = actionMethod.getAnnotation(Request.Put.class).value();
             putActionMap("PUT", requestPath, actionClass, actionMethod, commonActionMap, regexpActionMap);
         } else if (actionMethod.isAnnotationPresent(Request.Delete.class)) {
             String requestPath = actionMethod.getAnnotation(Request.Delete.class).value();

@@ -35,15 +35,15 @@ public class Params extends BaseBean {
     }
 
     public double getDouble(String name) {
-        return CastUtil.castDouble(name);
+        return CastUtil.castDouble(get(name));
     }
 
     public long getLong(String name) {
-        return CastUtil.castLong(name);
+        return CastUtil.castLong(get(name));
     }
 
     public int getInt(String name) {
-        return CastUtil.castInt(name);
+        return CastUtil.castInt(get(name));
     }
 
     private Object get(String name) {
