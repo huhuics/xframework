@@ -65,7 +65,7 @@ public class DispatcherServlet extends HttpServlet {
         }
         //获取Handler
         Handler handler = handlerMapping.getHandler(currentRequestMethod, currentRequestPath);
-        //若未找到Action,则跳转到404页面
+        //若未找到Handler,则跳转到404页面
         if (handler == null) {
             WebUtil.sendError(HttpServletResponse.SC_NOT_FOUND, "", response);
             return;
